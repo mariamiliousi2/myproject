@@ -1,0 +1,210 @@
+'use strict';
+
+/**
+ * Helper function to resolve promise with example data
+ * Eliminates code duplication by centralizing example response handling
+ */
+function resolveWithExample(resolve, exampleData) {
+  var examples = {};
+  examples['application/json'] = exampleData;
+  if (Object.keys(examples).length > 0) {
+    resolve(examples[Object.keys(examples)[0]]);
+  } else {
+    resolve();
+  }
+}
+
+/**
+ * Delete an author by ID
+ */
+exports.authorsAuthorIdDELETE = function(_authorId) {
+  return new Promise(function(resolve) {
+    resolve();
+  });
+}
+
+/**
+ * Get details of a specific author by ID
+ */
+exports.authorsAuthorIdGET = function(_authorId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}
+
+/**
+ * Update an author by ID
+ */
+exports.authorsAuthorIdPUT = function(_body, _authorId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}
+
+/**
+ * Get all authors from the database
+ */
+exports.authorsGET = function() {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, [ {
+      "name" : "name",
+      "id" : 0
+    }, {
+      "name" : "name",
+      "id" : 0
+    } ]);
+  });
+}
+
+/**
+ * Add a new author to the database
+ */
+exports.authorsPOST = function(_body) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}
+
+/**
+ * Delete a book by ID
+ */
+exports.booksBookIdDELETE = function(_bookId) {
+  return new Promise(function(resolve) {
+    resolve();
+  });
+}
+
+/**
+ * Get details of a specific book by ID
+ */
+exports.booksBookIdGET = function(_bookId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    });
+  });
+}
+
+/**
+ * Update a book by ID
+ */
+exports.booksBookIdPUT = function(_body, _bookId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    });
+  });
+}
+
+/**
+ * Get all books from the database
+ */
+exports.booksGET = function() {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, [ {
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    }, {
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    } ]);
+  });
+}
+
+/**
+ * Add a new book to the database
+ */
+exports.booksPOST = function(_body) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    });
+  });
+}
+
+/**
+ * Delete a category by ID
+ */
+exports.categoriesCategoryIdDELETE = function(_categoryId) {
+  return new Promise(function(resolve) {
+    resolve();
+  });
+}
+
+/**
+ * Get details of a specific category by ID
+ */
+exports.categoriesCategoryIdGET = function(_categoryId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}
+
+/**
+ * Update a category by ID
+ */
+exports.categoriesCategoryIdPUT = function(_body, _categoryId) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}
+
+/**
+ * Get all categories from the database
+ */
+exports.categoriesGET = function() {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, [ {
+      "name" : "name",
+      "id" : 0
+    }, {
+      "name" : "name",
+      "id" : 0
+    } ]);
+  });
+}
+
+/**
+ * Add a new category to the database
+ */
+exports.categoriesPOST = function(_body) {
+  return new Promise(function(resolve) {
+    resolveWithExample(resolve, {
+      "name" : "name",
+      "id" : 0
+    });
+  });
+}

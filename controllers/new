@@ -1,0 +1,125 @@
+'use strict';
+
+var utils = require('../utils/writer.js');
+var Default = require('../service/DefaultService');
+
+/**
+ * Helper function to handle promise responses
+ * Eliminates code duplication by centralizing response handling
+ * @param {Promise} servicePromise - The promise returned from the service layer
+ * @param {Object} res - Express response object
+ */
+function handleResponse(servicePromise, res) {
+  servicePromise
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+}
+
+/**
+ * Delete an author by ID
+*/
+module.exports.authorsAuthorIdDELETE = function authorsAuthorIdDELETE (_req, res, _next, authorId) {
+  handleResponse(Default.authorsAuthorIdDELETE(authorId), res);
+};
+
+/**
+ * Get author details by ID
+ */
+module.exports.authorsAuthorIdGET = function authorsAuthorIdGET (_req, res, _next, authorId) {
+  handleResponse(Default.authorsAuthorIdGET(authorId), res);
+};
+
+/**
+ * Update an author by ID
+ */
+module.exports.authorsAuthorIdPUT = function authorsAuthorIdPUT (_req, res, _next, body, authorId) {
+  handleResponse(Default.authorsAuthorIdPUT(body, authorId), res);
+};
+
+/**
+ * Get all authors
+*/
+module.exports.authorsGET = function authorsGET (_req, res, _next) {
+  handleResponse(Default.authorsGET(), res);
+};
+
+/**
+ * Create a new author
+*/
+module.exports.authorsPOST = function authorsPOST (_req, res, _next, body) {
+  handleResponse(Default.authorsPOST(body), res);
+};
+
+/**
+ * Delete a book by ID
+*/
+module.exports.booksBookIdDELETE = function booksBookIdDELETE (_req, res, _next, bookId) {
+  handleResponse(Default.booksBookIdDELETE(bookId), res);
+};
+
+/**
+ * Get book details by ID
+*/
+module.exports.booksBookIdGET = function booksBookIdGET (_req, res, _next, bookId) {
+  handleResponse(Default.booksBookIdGET(bookId), res);
+};
+
+/**
+ * Update a book by ID
+*/
+module.exports.booksBookIdPUT = function booksBookIdPUT (_req, res, _next, body, bookId) {
+  handleResponse(Default.booksBookIdPUT(body, bookId), res);
+};
+
+/**
+ * Get all books
+*/
+module.exports.booksGET = function booksGET (_req, res, _next) {
+  handleResponse(Default.booksGET(), res);
+};
+
+/**
+ * Create a new book
+*/
+module.exports.booksPOST = function booksPOST (_req, res, _next, body) {
+  handleResponse(Default.booksPOST(body), res);
+};
+
+/**
+ * Delete a category by ID
+*/
+module.exports.categoriesCategoryIdDELETE = function categoriesCategoryIdDELETE (_req, res, _next, categoryId) {
+  handleResponse(Default.categoriesCategoryIdDELETE(categoryId), res);
+};
+
+/**
+ * Get category details by ID
+*/
+module.exports.categoriesCategoryIdGET = function categoriesCategoryIdGET (_req, res, _next, categoryId) {
+  handleResponse(Default.categoriesCategoryIdGET(categoryId), res);
+};
+
+/**
+ * Update a category by ID
+*/
+module.exports.categoriesCategoryIdPUT = function categoriesCategoryIdPUT (_req, res, _next, body, categoryId) {
+  handleResponse(Default.categoriesCategoryIdPUT(body, categoryId), res);
+};
+
+/**
+ * Get all categories
+*/
+module.exports.categoriesGET = function categoriesGET (_req, res, _next) {
+  handleResponse(Default.categoriesGET(), res);
+};
+
+/**
+ * Create a new category
+ */
+module.exports.categoriesPOST = function categoriesPOST (_req, res, _next, body) {
+  handleResponse(Default.categoriesPOST(body), res);
+};
